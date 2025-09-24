@@ -24,6 +24,8 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
 
 # Proceso de la práctica
 ## Ejercicio 1: Programando clases
+### Objetivo: Comprender las clases y las propiedades
+
 1. crear una clase con el script llamado: ***CuboDeColores.cs***
 2. Definir las propiedades:
     > **public Color color = Color.blue;** // Variable pública, representa el color del cubo.
@@ -68,6 +70,7 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
     ![alt text](image-1.png)
 
     3. En el Inspector de cada cubo, asigna un color y un tamaño diferente.Así, sin cambiar el código ya tenemos cubos únicos a partir de la misma plantilla.
+   
     ![alt text](image-4.png)
     ![alt text](image-3.png)
     ![alt text](image-2.png)
@@ -79,8 +82,8 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
     ![alt text](Unity_hBoFOnPzlp-1.gif)
     en el código he añadido una variable bool para que el cubo solo se mueva una vez.
     y mover su posición.
-    ```
-    // Ejemplo: si el cubo se llama "Cube_A", y no se ha movido, pues cambia su posición
+        ```
+        // Si el cubo se llama "Cube_A", y no se ha movido, pues cambia su posición
         if (gameObject.name == "Cube_A" && !moved)
         {
             // aquí pusé un valor fijo, puede un número aleatorio.
@@ -89,4 +92,89 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
                                             transform.position.z);
             moved = true;
         }
+        ```
+
+## Ejercicio 2: Programando clases
+### Objetivo: Entender cómo se manipula la posición y rotación de un objeto.
+
+1. Agrear un cubo llamado jugador en la escena.
+2. le asinamos un script llamado ***ControladorMovimientoBasico***
+    ![alt text](image-5.png)
+
+    ***ControladorMovimientoBasico.cs***
+    
+    En el script, se crea unaa variable publica ***velocidad*** para controlar la velocidad del movimiento del jugador
+
     ```
+    public float velocidad = 5f;
+    ```
+    
+    En la función ***Update()***, Usamos el ***Input.GetKey()*** para realizar el movimiento del jugador con el teclado.
+
+    ***transform.Translate()*** para mover el objeto.
+
+    ***Vector3*** para tener la dirección
+
+    ```
+    // Move forward by pressing W
+    if (Input.GetKey(KeyCode.W))
+    {
+        transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+    }
+    ```
+    Este código significa que cuando el usuario presiona el teclado w, se mueve hacia adelante. 
+    
+    Usamos ***Time.deltaTime*** para mover más sueve, esto significa el tiempo en segundos que ha pasado desde el último frame. (El movimiento no depende del FPS, sino depende del tiempo).
+    
+    Así con los demás.
+    
+    **W -> adelante**
+
+    **S -> atrás**
+
+    **A -> izquierda**
+
+    **D -> derecha**
+
+    
+    ***ControladorMovimientoBasico.cs*** 
+    
+    Código completo
+    ```
+    using System.Security.Cryptography;
+    using UnityEngine;
+
+    public class ControladorMovimientoBasico : MonoBehaviour
+    {
+        public float velocidad = 5f; // Velocidad configurable desde el Inspector
+
+        void Update()
+        {
+            // forward
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+            }
+            // back
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(Vector3.back * velocidad * Time.deltaTime);
+            }
+            // left
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * velocidad * Time.deltaTime);
+            }
+            // right
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * velocidad * Time.deltaTime);
+            }
+        }
+    }
+
+    ```
+    
+    Prueba del juego:
+
+    ![alt text](Unity_BocmcIuZPp.gif)

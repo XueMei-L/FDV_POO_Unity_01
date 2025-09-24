@@ -21,19 +21,20 @@ public class CuboDeColores : MonoBehaviour
         // get rigidbody
         rb = GetComponent<Rigidbody>();
 
-        // render y aplicar color
+        // render and apply color
         GetComponent<Renderer>().material.color = colorActual;
         r = GetComponent<Renderer>();
         r.material.color = colorActual;
 
-        // realizar transform y aplicar tamaño
+        // perform transform and apply size
         t = GetComponent<Transform>();
         t.localScale = Vector3.one * tamano;
         transform.localScale = Vector3.one * tamano;
 
-        // Ejemplo: si el cubo se llama "CuboMovimiento", cambia su posición
+        // If the cube is called "Cube_A", and it has not moved, then its position changes
         if (gameObject.name == "Cube_A" && !moved)
         {
+            // here you can enter a random number.
             transform.position = new Vector3(transform.position.x - 3f,
                                             transform.position.y,
                                             transform.position.z);
