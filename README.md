@@ -189,4 +189,60 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
     ```
     En el error indica que el componente ***Assets\Scripts\ControladorMovimientoBasico.cs*** está fallando por el movito de que no existe **translate** en **Trasform**, (puesto que Traslate se escribe con T mayúscula), por lo tanto no se encuentra, también nos indica que el error está en la linea (10,19).
 
+## Ejercicio 4: Errores de ejecución
+### Objetivo: Identificar un error de ejecución causado por una variable sin inicializar, que resulta en un comportamiento inesperado.
+1. Crea un nuevo script llamado ***TestForRuntimeError.cs***
+2. En él, escribimos lo siguiente código:
+   ```
+    using System.Security.Cryptography;
+    using UnityEngine;
+
+    public class TestForRuntimeError : MonoBehaviour
+    {
+        private Renderer rend;
+
+        void Update()
+        {
+            rend.material.color = Color.blue;
+        }
+    }
+    ```
+    ![alt text](image-7.png)
+    
+    Nos da error a la hora de dar play el juego, eso debido a que está intentando usar una referencia nula, es decir, rend no apunta a ningún objeto, pero en la función ***Update()*** está llamando a él para cambiar el color.
+
+3. Crear un cubo llamado ***CambiadorColorFantasma*** y otro script llamado ***ColorFantasma.cs***
+   ***
+   ***ColorFantasma.cs***: 
+
+   ```
+    using UnityEngine;
+    public class ColorFantasma : MonoBehaviour
+    {
+        private Renderer rend;
+        public Material materialFinal;
+        void Start()
+        {
+            // ¡Esta línea está comentada a propósito!
+            // rend = GetComponent<Renderer>();
+        }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rend.material = materialFinal;
+            }
+        }
+    }
+    ```
+
+4. Análisis del Problema:
+   1. Guardar el script, y volver a Unity.
+   2. Asignar el script al objeto Cube ***CambiadorColorFantasma***
+   3. Crear un material verbo, y asignar a la variable Material Final
+   ![alt text](image-8.png)
+   4. Ejercurtar el juego, y el cubo no cambia el color y sale un error de mensaje.
+   ![alt text](image-9.png)
+   Esto es porque **render** no apunta a ningún objeto, y sigue siendo **null**, para solucionarlo, simplementa descomentar el código **rend = GetComponent<Renderer>();** para inicializar el objeto.
+
 

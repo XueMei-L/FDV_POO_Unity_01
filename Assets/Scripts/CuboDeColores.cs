@@ -6,7 +6,7 @@ public class CuboDeColores : MonoBehaviour
     public Color colorActual = Color.blue;  // Color del cubo
     public float tamano = 1f;               // Tamaño del cubo
 
-    bool moved = false; // 记录是否已经移动过
+    bool moved = false; // to control the movement
 
     private Rigidbody rb;                    // Referencia al Rigidbody
     private Renderer r;                      // Referencia al Renderer
