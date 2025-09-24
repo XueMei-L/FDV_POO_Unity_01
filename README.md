@@ -361,9 +361,9 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
 
 2. Ahora realizamos otra clase ***CarruselManagerSize*** para modificar el tamaño de los cubos usando la tela k.
     ***CarruselManagerSize.cs***:
-    ```
+
     Hacemos lo mismo que la clase anterior, quitanto la lista de color, y usando transform.localScale para modificar el tamaño de los cubos.
-    ```
+    
 
 3. Convertir las funciones en publico y crear la tercera clase llamado ***CarruselManager***. En este script maneja los teclados, si presiona espacio, llama la funición de ***changeColor***, y si presiona k, llama la función de ***changeSize***
    ```
