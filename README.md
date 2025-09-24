@@ -15,11 +15,6 @@ En lugar de tener un gran bloque de instrucciones, agrupamos el código en **obj
 - **Propiedades** → lo que son  
 - **Comportamientos** → lo que hacen  
 
-En Unity, ya trabajas con objetos, por ejemplo:  
-- Un personaje  
-- Una moneda  
-- Un enemigo  
-
 La POO ayuda a crear propios objetos con reglas personalizadas.
 
 # Proceso de la práctica
@@ -81,7 +76,6 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
     5. Ahora usamos el transform.position podemos modificar la posición de un cubo
     ![alt text](Unity_hBoFOnPzlp-1.gif)
     en el código he añadido una variable bool para que el cubo solo se mueva una vez.
-    y mover su posición.
         ```
         // Si el cubo se llama "Cube_A", y no se ha movido, pues cambia su posición
         if (gameObject.name == "Cube_A" && !moved)
@@ -136,7 +130,8 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
 
     **D -> derecha**
 
-    
+
+    ***
     ***ControladorMovimientoBasico.cs*** 
     
     Código completo
@@ -178,3 +173,20 @@ La POO ayuda a crear propios objetos con reglas personalizadas.
     Prueba del juego:
 
     ![alt text](Unity_BocmcIuZPp.gif)
+
+## Ejercicio 3: Depurando errores sintácticos
+### Objetivo: Aprender a identificar y corregir errores de programación usando la consola de Unity.
+1. Añadir el código en el script de ***ControladorMovimientoBasico.cs***
+   
+    ```
+    transform.translate(2,1,1);
+    ```
+2. Miramos la consola que proporciona Unity, vemos que hay error en la dicha linea del código.
+    ![alt text](image-6.png)
+
+    ```
+    Assets\Scripts\ControladorMovimientoBasico.cs(10,19): error CS1061: 'Transform' does not contain a definition for 'translate' and no accessible extension method 'translate' accepting a first argument of type 'Transform' could be found (are you missing a using directive or an assembly reference?)
+    ```
+    En el error indica que el componente ***Assets\Scripts\ControladorMovimientoBasico.cs*** está fallando por el movito de que no existe **translate** en **Trasform**, (puesto que Traslate se escribe con T mayúscula), por lo tanto no se encuentra, también nos indica que el error está en la linea (10,19).
+
+

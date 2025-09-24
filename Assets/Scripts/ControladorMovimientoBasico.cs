@@ -7,6 +7,9 @@ public class ControladorMovimientoBasico : MonoBehaviour
 
     void Update()
     {
+        // Execise 3: Debugging syntactical errors
+        // transform.translate(2,1,1);
+
         // forward
         if (Input.GetKey(KeyCode.W))
         {
