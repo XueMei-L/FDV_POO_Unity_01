@@ -3,7 +3,7 @@ FDV_POO_Unity
 ```
 >> PRACTICA:   Unity Project - POO with Unity
 >> COMPONENTE: XueMei Lin
->> GITHUB:     https://github.com/XueMei-L/FDV_POO_ImgsAndGifs/Unity_01.git
+>> GITHUB:     https://github.com/XueMei-L/FDV_POO_Unity_01.git
 >> Versión:    1.0.0
 ```
 
