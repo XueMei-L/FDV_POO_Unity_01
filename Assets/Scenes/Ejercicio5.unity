@@ -490,7 +490,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3fb3a310a5d6b9144bb4f7f3f5e2451b, type: 2}
+  - {fileID: 2100000, guid: 45c4387af0252b64f8917dd048f0fe26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 1445318411}
   - component: {fileID: 1445318415}
   m_Layer: 0
-  m_Name: Jugador
+  m_Name: CuboInesperado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +599,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2a793f9427703d4383a9cc02156366c, type: 2}
+  - {fileID: 2100000, guid: d159a7f7b1a040e408862c4e8e2cbcae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -653,10 +653,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445318409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c142e8fd6f5cf32409d11a5c9c0cd801, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fdc7325125ffd34aa9d2cadd4fdaf9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
+  colorEsperado: {r: 0, g: 0.09844065, b: 1, a: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
